@@ -28,12 +28,6 @@ dd {
   margin: 0;
 }
 
-body {
-  min-height: 100vh;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-}
-
 input,
 button,
 textarea,
@@ -48,4 +42,12 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  background-color: rgb(68, 64, 64);
 }
