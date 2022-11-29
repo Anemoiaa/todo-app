@@ -11,8 +11,6 @@ function DeleteButton(props) {
     );
 }
 
-export default DeleteButton;
-
 const Button = styled.button`
     display: none;
     margin-left: auto !important;
@@ -30,3 +28,5 @@ const Svg = styled.svg`
     width: 18px;
     height: 18px;
 `;
+
+export default DeleteButton;

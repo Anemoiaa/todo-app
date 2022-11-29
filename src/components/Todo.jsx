@@ -15,8 +15,6 @@ function Todo({todo, ...props }) {
     );
 }
 
-export default Todo;
-
 const Container = styled.div`
     display: flex;
     align-items: center;
@@ -42,3 +40,5 @@ const Container = styled.div`
         }
     }
 `;
+
+export default Todo;

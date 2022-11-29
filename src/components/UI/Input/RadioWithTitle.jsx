@@ -9,9 +9,6 @@ function RadioWithTitle({ filterType, ...props }) {
     );
 }
 
-export default RadioWithTitle;
-
-
 const Label = styled.label`
 
     color: ${props => props.theme.filterColor};
@@ -33,3 +30,5 @@ const Label = styled.label`
         color: #3A7CFD;
     }
 `;
+
+export default RadioWithTitle;

@@ -26,8 +26,6 @@ function TodoFilter({filterQuery, setFilterQuery, itemsLeft, clearCompleted,  ..
     );
 }
 
-export default TodoFilter;
-
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
@@ -55,3 +53,5 @@ const ClearButton = styled.button`
         color: ${props => props.theme.hover};
     } 
 `;
+
+export default TodoFilter;

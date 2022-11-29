@@ -20,8 +20,6 @@ function TodoList({ todos, ...props }) {
     );
 }
 
-export default TodoList;
-
 const ListContiner = styled.div`
     max-height: 40vh;
     overflow-y: auto;`
@@ -43,3 +41,5 @@ const Container = styled.div`
     }
 
 `;
+
+export default TodoList;

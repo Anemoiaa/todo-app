@@ -27,8 +27,6 @@ function TodoForm({create, ...props}) {
     );
 }
 
-export default TodoForm;
-
 const Form = styled.form`
     display: flex;
     padding: 20px 24px 20px 24px;
@@ -54,3 +52,5 @@ const Form = styled.form`
         color: ${props => props.theme.placeholder};
     }
 `;
+
+export default TodoForm;

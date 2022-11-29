@@ -15,8 +15,6 @@ function Header({toggle, theme, ...props}) {
     );
 }
 
-export default Header;
-
 const Head = styled.header`
     display: flex;
     justify-content: space-between;
@@ -34,5 +32,6 @@ const Head = styled.header`
     img {
        cursor: pointer; 
     }
-
 `;
+
+export default Header;
