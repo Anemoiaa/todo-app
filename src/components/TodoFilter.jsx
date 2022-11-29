@@ -1,16 +1,27 @@
-import { useMemo } from "react";
 import styled from "styled-components";
+import RadioWithTitle from "./UI/Input/RadioWithTitle";
 
-function TodoFilter({filter, setFilter, itemsLeft, clearComplated,  ...props}) {
+function TodoFilter({filterQuery, setFilterQuery, itemsLeft, clearCompleted,  ...props}) {
+
+    const filtres = [
+        {title: 'All', value: 'all'},
+        {title: 'Active', value: 'active'},
+        {title: 'Completed', value: 'completed'}
+    ];
+
     return(
         <Container>
             <span>{itemsLeft} items left</span>
-            <List>
-                <li>All</li>
-                <li>Active</li>
-                <li>Complate</li>
+            <List onChange={(e) => setFilterQuery(e.target.value)}>
+                {filtres.map(filter => 
+                    <RadioWithTitle
+                        checked={filterQuery === filter.value}
+                        key={filter.title}
+                        filterType={filter}
+                    />    
+                )}
             </List>
-            <button onClick={() => clearComplated(null)}>Clear Complated</button>
+            <ClearButton onClick={() => clearCompleted(null)}>Clear Completed</ClearButton>
         </Container>
     );
 }
@@ -20,13 +31,27 @@ export default TodoFilter;
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px 0px 24px;
+    font-size: 14px;
+    color: #9495A5;
 `;
 
-const List = styled.ul`
-    margin: 0;
-    list-style-type: none;
+const List = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 19px;
+`;
 
-    li {
-        display: inline;
-    }
+const ClearButton = styled.button`
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+        color: #494C6B;
+    } 
 `;

@@ -46,8 +46,19 @@ select {
 
 
 body {
-  min-height: 100vh;
+  min-width: 385px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  background-color: rgb(68, 64, 64);
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #494C6B;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-track-piece {
+  background: #fff;
 }

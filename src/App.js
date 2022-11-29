@@ -1,46 +1,72 @@
 import { useMemo, useState } from "react";
 import TodoFilter from "./components/TodoFilter";
 import TodoList from "./components/TodoList";
-
+import TodoForm from "./components/TodoForm";
+import { useTodos } from "./hooks/useTodos";
+import styled from "styled-components";
+import bgLight from "./assets/images/bg-desktop-light.jpg";
+import Header from "./components/Header";
 function App() {
-    console.log("reset")
     const [todoList, setTodoList] = useState([
-        { title: "10 minutes meditation", isComplate: false },
-        { title: "Make Review", isComplate: true },
-        { title: "Complete Todo App on Frontend Mentor", isComplate: false},
+        { title: "10 minutes meditation", isComplete: false },
+        { title: "Make Review", isComplete: true },
+        { title: "Complete Todo App on Frontend Mentor", isComplete: false},
     ]);
-    const itemsLeft = useMemo(() => todoList.filter(todo => !todo.isComplate).length, [todoList]);
-    const [filter, setFilter] = useState("All");
+    const itemsLeft = useMemo(() => todoList.filter(todo => !todo.isComplete).length, [todoList]);
+    const [filterQuery, setFilterQuery] = useState("all");
+    const filteredTodos = useTodos(todoList, filterQuery);
 
+    function createTodo(newTodo) {
+        setTodoList([...todoList, newTodo]);
+    }
 
     function removeTodo(index) {
         console.log(index);
         let updatedList;
         if(index === null) {
-            updatedList = todoList.filter(todo => !todo.isComplate);
+            updatedList = todoList.filter(todo => !todo.isComplete);
         }
         else {
-            updatedList = todoList.filter((todo, i) => i != index);
+            updatedList = todoList.filter((todo, i) => i !== index);
         }
         setTodoList(updatedList);
     }
 
-    function toggleIsComplate(index) {
+    function toggleIsComplete(index) {
         const updatedList = [...todoList];
-        updatedList[index].isComplate = !updatedList[index].isComplate;
+        updatedList[index].isComplete = !updatedList[index].isComplete;
         setTodoList(updatedList);
     }
 
     return (
-        <>
-            <TodoList 
-                todos={todoList} 
-                setTodoList={setTodoList} 
-                remove={removeTodo}
-                toogleIsComplate={toggleIsComplate} >
-                <TodoFilter filter={filter} setFilter={setFilter} itemsLeft={itemsLeft} clearComplated={removeTodo} />
-            </TodoList>
-        </>
+        <Wrapper>
+            <Container>
+                <Header />
+                <TodoForm create={createTodo}/>
+                <TodoList 
+                    todos={filteredTodos} 
+                    setTodoList={setTodoList} 
+                    remove={removeTodo}
+                    toogleIsComplete={toggleIsComplete} >
+                    <TodoFilter filterQuery={filterQuery} setFilterQuery={setFilterQuery} itemsLeft={itemsLeft} clearCompleted={removeTodo} />
+                </TodoList>
+            </Container>
+        </Wrapper>
     );
 }
 export default App;
+
+const Wrapper = styled.div`
+    min-height: 100vh;
+    padding: 0px 24px 0px 24px;
+    background-color: #FAFAFA;
+    background-image: url(${bgLight});
+    background-repeat: no-repeat;
+    background-size: contain;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+`;
