@@ -34,7 +34,7 @@ const Container = styled.div`
     align-items: center;
     padding: 16px 24px 0px 24px;
     font-size: 14px;
-    color: #9495A5;
+    color: ${props => props.theme.filterColor};
 `;
 
 const List = styled.div`
@@ -52,6 +52,6 @@ const ClearButton = styled.button`
     cursor: pointer;
 
     &:hover {
-        color: #494C6B;
+        color: ${props => props.theme.hover};
     } 
 `;

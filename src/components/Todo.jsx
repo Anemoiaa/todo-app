@@ -21,7 +21,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     padding: 20px 24px 19px 24px;
-    background: #fff;
+    background-color: ${props => props.theme.todoBg};
     cursor: pointer;
 
     &:hover > button:last-child {
@@ -32,8 +32,8 @@ const Container = styled.div`
         margin-left: 24px;
         font-size: 18px;
         ${props => props.isComplete
-            ? "color: #D1D2DA; text-decoration: line-through;"
-            : "color: #494C6B;"
+            ? `color: ${props.theme.completeTodoColor}; text-decoration: line-through;`
+            : `color: ${props.theme.color};`
         }
     }
 

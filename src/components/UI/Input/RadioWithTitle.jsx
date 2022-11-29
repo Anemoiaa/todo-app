@@ -14,7 +14,7 @@ export default RadioWithTitle;
 
 const Label = styled.label`
 
-    color: #9495A5;
+    color: ${props => props.theme.filterColor};
     cursor: pointer;
 
     input {
@@ -26,7 +26,7 @@ const Label = styled.label`
     }
 
     &:hover {
-        color: #494C6B;
+        color: ${props => props.theme.hover};
     } 
 
     input:checked + span {

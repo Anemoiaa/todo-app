@@ -30,12 +30,12 @@ const ListContiner = styled.div`
 const Container = styled.div`
     margin-top: 24px;
     padding: 20px 0px 16px 0px;
-    background-color: #fff;
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background-color: ${props => props.theme.todoBg};
+    box-shadow: ${props => props.theme.shadow };
     border-radius: 5px;
 
     form div {
-        border-bottom: 1px solid #E3E4F1;
+        border-bottom: 1px solid ${props => props.theme.border};
     }
 
     form div:first-child {
