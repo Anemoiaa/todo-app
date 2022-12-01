@@ -32,6 +32,10 @@ const Head = styled.header`
     img {
        cursor: pointer; 
     }
+
+    @media (max-width: 480px) {
+        padding-top: 48px;
+    }
 `;
 
 export default Header;

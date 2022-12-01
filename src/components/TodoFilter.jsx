@@ -27,6 +27,7 @@ function TodoFilter({filterQuery, setFilterQuery, itemsLeft, clearCompleted,  ..
 }
 
 const Container = styled.div`
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,6 +40,17 @@ const List = styled.div`
     display: flex;
     justify-content: center;
     gap: 19px;
+
+    @media (max-width: 480px) {
+        position: absolute;
+        top: 66px;
+        right: 0;
+        left: 0;
+        padding: 15px 0px 15px 0px;
+        background-color: ${props => props.theme.bg};
+        border-radius: 5px;
+        box-shadow: ${props => props.theme.shadow };
+    }
 `;
 
 const ClearButton = styled.button`

@@ -51,6 +51,16 @@ const Form = styled.form`
     input[type=text]:placeholder {
         color: ${props => props.theme.placeholder};
     }
+
+    @media (max-width: 480px) {
+        padding: 14px 20px 14px 20px;
+        font-size: 12px;
+        line-height: 1;
+
+        input[type=text] {
+            margin-left: 12px;
+        }
+    }
 `;
 
 export default TodoForm;

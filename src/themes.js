@@ -1,8 +1,11 @@
 import bgLight from "./assets/images/bg-desktop-light.jpg";
 import bgDrak from "./assets/images/bg-desktop-dark.jpg";
+import bgLightMobile from "./assets/images/bg-mobile-light.jpg";
+import bgDarkMobile from "./assets/images/bg-mobile-dark.jpg";
 
 export const darkTheme = {
     bgImg: bgDrak,
+    bgImgMb: bgDarkMobile,
     bg: "#171823",
     todoBg: "#25273D",
     border: "#393A4B",
@@ -17,6 +20,7 @@ export const darkTheme = {
 
 export const lightTheme = {
     bgImg: bgLight,
+    bgImgMb: bgLightMobile,
     bg: "#FAFAFA",
     todoBg: "#fff",
     border: "#E3E4F1",
@@ -27,6 +31,5 @@ export const lightTheme = {
     hover: "#494C6B",    
     placeholder: "#9495A5",
     shadow: "0px 35px 50px -15px rgba(194, 195, 214, 0.5)",
-    
 
 }

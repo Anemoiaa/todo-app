@@ -73,12 +73,20 @@ const Wrapper = styled.div`
     background-image: url(${props => props.theme.bgImg});
     background-repeat: no-repeat;
     background-size: contain;
+    
+    @media (max-width: 480px) {
+        background-image: url(${props => props.theme.bgImgMb});
+    }
 `;
 
 const Container = styled.div`
     width: 100%;
     max-width: 540px;
     margin: 0 auto;
+
+    @media (max-width: 480px) {
+        max-width: 327px;
+    }
 `;
 
 export default App;

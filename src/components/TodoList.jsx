@@ -22,8 +22,19 @@ function TodoList({ todos, ...props }) {
 
 const ListContiner = styled.div`
     max-height: 40vh;
-    overflow-y: auto;`
-;
+    overflow-y: auto;
+
+    div:first-child {
+        padding: 0px 24px 19px 24px;
+    }
+    
+    @media (max-width: 480px) {
+        div:first-child {
+            padding: 0px 20px 16px 20px;
+        }
+    }
+    
+`;
 
 const Container = styled.div`
     margin-top: 24px;
@@ -32,14 +43,10 @@ const Container = styled.div`
     box-shadow: ${props => props.theme.shadow };
     border-radius: 5px;
 
-    form div {
-        border-bottom: 1px solid ${props => props.theme.border};
+    @media (max-width: 480px) {
+        margin-top: 16px;
+        padding: 16px 0px 20px 0px;
     }
-
-    form div:first-child {
-        padding: 0px 24px 19px 24px;
-    }
-
 `;
 
 export default TodoList;

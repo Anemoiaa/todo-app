@@ -19,7 +19,7 @@ const Button = styled.button`
     background none;
     cursor: pointer;
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
         display: block;
     }
 `;
@@ -27,6 +27,11 @@ const Button = styled.button`
 const Svg = styled.svg`
     width: 18px;
     height: 18px;
+
+    @media (max-width: 480px) {
+        width: 12px;
+        height: 12px;
+    }
 `;
 
 export default DeleteButton;

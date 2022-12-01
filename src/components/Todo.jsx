@@ -21,6 +21,8 @@ const Container = styled.div`
     padding: 20px 24px 19px 24px;
     background-color: ${props => props.theme.todoBg};
     cursor: pointer;
+    border-bottom: 1px solid ${props => props.theme.border};
+
 
     &:hover > button:last-child {
         display: block;
@@ -35,7 +37,14 @@ const Container = styled.div`
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
+        padding: 16px 20px 16px 20px;
+
+        span {
+            margin-left: 12px;
+            font-size: 12px;
+        }
+
         &:hover > button:last-child {
         }
     }

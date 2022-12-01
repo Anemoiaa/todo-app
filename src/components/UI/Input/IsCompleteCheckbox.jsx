@@ -26,6 +26,11 @@ const Label = styled.label`
         ? "background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%); border: none;"
         : `background-color: inherit; border: 1px solid ${props.theme.border};`
     }
+
+    @media (max-width: 480px) {
+        width: 20px;
+        height: 20px;
+    }
 `;
 
 const Input = styled.input`
