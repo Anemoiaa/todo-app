@@ -28,7 +28,6 @@ function App() {
     }
 
     function removeTodo(index) {
-        console.log(index);
         let updatedList;
         //delete all of completed todos
         if (index === null) {
@@ -73,7 +72,7 @@ const Wrapper = styled.div`
     background-image: url(${props => props.theme.bgImg});
     background-repeat: no-repeat;
     background-size: contain;
-    
+
     @media (max-width: 480px) {
         background-image: url(${props => props.theme.bgImgMb});
     }
