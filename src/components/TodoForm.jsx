@@ -15,11 +15,11 @@ function TodoForm({create, ...props}) {
             create(newTodo);
             setNewTodo({title: "", isComplete: false});
         }}>
-            <IsCompleteCheckbox 
+            <IsCompleteCheckbox
                 isComplete={newTodo.isComplete}
                 onClick={() => setNewTodo({...newTodo, isComplete: !newTodo.isComplete})}
             />
-            <input 
+            <input
                 value={newTodo.title}
                 onChange={(e) => setNewTodo({...newTodo, title: e.target.value})}
                 type="text" placeholder="Create a new todo…" />
@@ -31,7 +31,7 @@ const Form = styled.form`
     display: flex;
     padding: 20px 24px 20px 24px;
     background-color: ${props => props.theme.todoBg};
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    box-shadow: ${props => props.theme.shadow};
     border-radius: 5px;
     font-size: 18px;
     color: ${props => props.theme.inputColor};

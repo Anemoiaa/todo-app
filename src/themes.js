@@ -15,7 +15,7 @@ export const darkTheme = {
     completeTodoColor: "#4D5067",
     hover: "#E3E4F1",
     placeholder: "#767992",
-    shadow: "",
+    shadow: "none",
 };
 
 export const lightTheme = {
@@ -28,7 +28,7 @@ export const lightTheme = {
     filterColor: "#9495A5",
     inputColor: "#393A4B",
     completeTodoColor: "#D1D2DA",
-    hover: "#494C6B",    
+    hover: "#494C6B",
     placeholder: "#9495A5",
     shadow: "0px 35px 50px -15px rgba(194, 195, 214, 0.5)",
 
